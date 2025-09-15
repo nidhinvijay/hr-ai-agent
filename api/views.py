@@ -22,7 +22,7 @@ def index_view(request):
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 def get_ai_analysis(job_description, resume_text):
-    model = genai.GenerativeModel('gemini-1.5-flash') # <-- CHANGED: Specify the Gemini model
+    model = genai.GenerativeModel('gemini-1.5-flash') 
 
     prompt = f"""
     You are an expert HR analyst. Based on the following job description and resume, perform these actions:
@@ -42,12 +42,11 @@ def get_ai_analysis(job_description, resume_text):
     """
     try:
         # Call the Gemini API
-        response = model.generate_content(prompt) # <-- CHANGED: The API call itself
+        response = model.generate_content(prompt) 
         
         # The result is in response.text
         result_text = response.text
         
-        # A simple check to clean up potential markdown formatting
         if '```json' in result_text:
             result_text = result_text.split('```json\n')[1].split('```')[0]
 
@@ -55,8 +54,6 @@ def get_ai_analysis(job_description, resume_text):
     except Exception as e:
         print(f"An error occurred with the Gemini API: {e}")
         return None
-
-# --- THE REST OF THE FILE IS EXACTLY THE SAME ---
 
 class ResumeProcessingView(APIView):
     parser_classes = (MultiPartParser, FormParser)
@@ -72,7 +69,6 @@ class ResumeProcessingView(APIView):
         for resume_file in resumes:
             try:
                 resume_text = ""
-                # UPGRADED: Handle multiple file types
                 if resume_file.name.endswith('.pdf'):
                     pdf_reader = PyPDF2.PdfReader(resume_file)
                     for page in pdf_reader.pages:

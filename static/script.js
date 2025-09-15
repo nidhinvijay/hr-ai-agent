@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Element Selectors ---
     const form = document.getElementById('upload-form');
     const submitBtn = document.getElementById('submit-btn');
     const resultsContainer = document.getElementById('results-container');
