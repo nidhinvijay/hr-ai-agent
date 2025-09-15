@@ -28,18 +28,6 @@ An intelligent, full-stack web application designed to automate and streamline t
 | **Python Libs** | `google-generativeai`, `google-api-python-client`, `PyPDF2`, `python-docx`                  |
 | **Database** | SQLite (Default for Development)                                                            |
 
----
-
-## 📸 Screenshots
-
-
-*The main dashboard for uploading resumes and job descriptions.*
-
-
-*Ranked candidates with scores, summaries, and extracted skills.*
-
-
-*The list of upcoming interviews fetched from Google Calendar.*
 
 ---
 
@@ -47,11 +35,10 @@ An intelligent, full-stack web application designed to automate and streamline t
 
 For security purposes, this application is currently in Google's "Testing" mode. This means only pre-authorized email addresses can grant it access to a Google Calendar during the OAuth consent process.
 
-**I have already pre-authorized the two email addresses from the submission details:**
+**I have already pre-authorized the email address from the submission details:**
 * `ilmoraai25@gmail.com`
-* `devika.rs@srishtiinnovative.com`
 
-If you are logged into a Google account with one of these emails when you test the application, the calendar integration should work seamlessly.
+If you are logged into a Google account with this email when you test the application, the calendar integration should work seamlessly.
 
 If you would prefer to test using a different Google account, please let me know the email address **(never your password)**, and I will add it to the authorized list immediately. This is a standard procedure for testing new applications that use Google's secure OAuth2 system.
 
@@ -67,7 +54,7 @@ Follow these steps to get the project running on your local machine.
 
 ### 2. Clone the Repository
 ```bash
-git clone [https://github.com/your-username/hr-ai-agent.git](https://github.com/your-username/hr-ai-agent.git)
+git clone [https://github.com/nidhinvijay/hr-ai-agent.git](https://github.com/nidhinvijay/hr-ai-agent.git)
 cd hr-ai-agent
 ```
 
@@ -102,6 +89,7 @@ This project requires API keys for Google AI and Google Calendar.
     ```
     GOOGLE_API_KEY=your_gemini_api_key_here
     ```
+> **Note:** The `.env` file is not included in this repository for security reasons. To facilitate testing, **I am happy to provide the necessary API key upon request.**
 
 ### 2. Google Calendar API Credentials
 * Go to the [Google Cloud Console](https://console.cloud.google.com/).
